@@ -54,7 +54,13 @@ public class WordWrapWithRecursionTest {
     // if the first word  is greather  then  line  length
     @Test
     public void testWordWrapWithStartingWordGreaterThenLineLength() {
-	final String wrappedWord = wordWrap.wrapWord("Sachin lives in London", 4);
-	Assert.assertEquals("Sachin \nlives \nin \nLondon", wrappedWord);
+	final String wrappedWord = wordWrap.wrapWord("London is capital of United Kingdom", 4);
+	Assert.assertEquals("London \nis \ncapital \nof \nUnited \nKingdom", wrappedWord);
+    }
+
+    @Test
+    public void testWordWrapWithLongerLineSentence() {
+	final String wrappedWord = wordWrap.wrapWord("London is capital of United Kingdom and Leeds is city in Yorkshire", 4);
+	Assert.assertEquals("London \nis \ncapital \nof \nUnited \nKingdom \nand \nLeeds \nis \ncity \nin \nYorkshire", wrappedWord);
     }
 }

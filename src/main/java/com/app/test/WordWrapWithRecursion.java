@@ -13,12 +13,15 @@ public class WordWrapWithRecursion {
 	    }
 	    String pre = wrapword.substring(0, linelength);
 	    String post = wrapword.substring(linelength, wrapword.length());
-	    if (post.indexOf(0) != ' ') {
+	    if (post.charAt(0) != ' ') {
 		int pos = pre.lastIndexOf(" ");
-		wrappedSentence.append(pre.substring(0, pos));
-		wrappedSentence.append(" \n");
+		wrappedSentence.append(pre.substring(0, pos)+" \n");
 		String appStr = pre.substring(pos, pre.length()).trim() + post;
 		return wrapWord(appStr,linelength);
+	    }
+	    else {
+		wrappedSentence.append(pre + " \n");
+		wrapWord(post.trim(), linelength);
 	    }
 	}
 	else {
@@ -30,7 +33,7 @@ public class WordWrapWithRecursion {
     public static void main(String []args){
 
 	WordWrapWithRecursion wordWrapWithRecursion = new WordWrapWithRecursion();
-	String wrapWord = wordWrapWithRecursion.wrapWord("Sachin lives in London",4);
+	String wrapWord = wordWrapWithRecursion.wrapWord("back to india",4);
 	System.out.println(wrapWord);
     }
 }
