@@ -5,16 +5,14 @@ word should stay on same line.
 #example-1
 
 sentence = "i would like"
-
 line length = 4
 
-'i
+i
 would
-like'
+like
 
 #example-2
 sentence = "i would like"
-
 line length = 10
 
 i would
@@ -22,7 +20,6 @@ like
 
 #example-3
 sentence = "i would like to wrap"
-
 line length = 10
 
 i would
